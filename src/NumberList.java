@@ -23,7 +23,7 @@ public class NumberList {
     }
 
     public void exportListToFile(String outputFile) {
-
+        File file = new File(outputFile);
         try (PrintWriter outputWriter =
                      new PrintWriter(new BufferedWriter(new FileWriter(outputFile)))) {
             int size = list.size();
@@ -42,6 +42,7 @@ public class NumberList {
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
+
         } catch (IOException e) {
             e.printStackTrace();
         }

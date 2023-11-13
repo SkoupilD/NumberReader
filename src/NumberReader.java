@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 class NumberReader {
@@ -46,7 +47,18 @@ class NumberReader {
         System.out.println("For print left empty || for export insert output file path");
         String vstup2 = sc.nextLine();
         if (vstup2 != ""){
-            list.exportListToFile(vstup2);
+            File file = new File(vstup2);
+            if (file.exists()) {list.exportListToFile(vstup2);}
+            else {
+                while (!file.exists()){
+                System.out.println("File not found!");
+                System.out.println("For print left empty || for export insert output file path");
+                vstup2 = sc.nextLine();
+                file = new File(vstup2);
+                if (vstup2.isEmpty()) list.printList();
+                break;
+            }
+            }
         } else {
             list.printList();
         }
