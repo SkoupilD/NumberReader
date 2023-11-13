@@ -7,6 +7,7 @@ out/
 *.iml
 *.iws
 *.ipr
+*.txt
 
 .idea/workspace.xml
 .idea/tasks.xml
