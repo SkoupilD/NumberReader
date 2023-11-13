@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class NumberList {
     private ArrayList<Integer> list = new ArrayList<>();
 
@@ -16,12 +15,11 @@ public class NumberList {
                 if (record > 0) {
                     list.add(record);
                 }
-            }
+            } if (!list.isEmpty()) System.out.println("File successfully imported!");
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         }
     }
-
     public void exportListToFile(String outputFile) {
         File file = new File(outputFile);
         try (PrintWriter outputWriter =
@@ -46,8 +44,8 @@ public class NumberList {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("File successfully exported!");
     }
-
     public void printList() {
         int size = list.size();
         if (size % 2 == 0) {
@@ -64,7 +62,6 @@ public class NumberList {
             }
         }
     }
-
     public void addNumber(int i) {
         list.add(i);
     }
