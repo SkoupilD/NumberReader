@@ -14,13 +14,14 @@ public class NumberList {
             while (sc.hasNextInt()) {
                 record = Integer.parseInt(sc.nextLine());
                 if (record > 0) {
-                list.add(record);
-            }
+                    list.add(record);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         }
     }
+
     public void exportListToFile(String outputFile) {
 
         try (PrintWriter outputWriter =
@@ -41,10 +42,11 @@ public class NumberList {
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public void printList() {
         int size = list.size();
         if (size % 2 == 0) {
@@ -61,8 +63,10 @@ public class NumberList {
             }
         }
     }
+
     public void addNumber(int i) {
         list.add(i);
     }
-
+    public int getSize(){ return list.size();
+    }
 }
