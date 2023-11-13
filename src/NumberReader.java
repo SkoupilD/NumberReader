@@ -9,7 +9,7 @@ class NumberReader {
             int intup = 0;
             int intupy;
             NumberList list = new NumberList();
-            while (vstup == "" || intup <= 0 || list.getSize() <= 0) {
+            while (vstup.isEmpty() || intup <= 0 || list.getSize() <= 0) {
                 System.out.println("Insert input file path || number of integers to input?");
                 vstup = sc.nextLine();
                 if (isInteger(vstup)) {
@@ -46,7 +46,7 @@ class NumberReader {
             }
         System.out.println("For print left empty || for export insert output file path");
         String vstup2 = sc.nextLine();
-        if (vstup2 != ""){
+        if (!vstup2.isEmpty()){
             File file = new File(vstup2);
             if (file.exists()) {list.exportListToFile(vstup2);}
             else {
