@@ -33,13 +33,6 @@ class NumberReader {
                                     i--;
                                 }
                             }
-                            System.out.println("For print left empty || for export insert output file path");
-                            String vstup3 = sc.nextLine();
-                            if (vstup3 != ""){
-                                list.exportListToFile(vstup3);
-                            } else {
-                                list.printList();
-                            }
                         }
                 } else  if (isDouble(vstup)) {
                     System.out.println("Number should be positive integer!");
@@ -47,16 +40,16 @@ class NumberReader {
                     list.importListFromFile(vstup);
                     if (list.getSize() > 0) {
                         intup++;
-                        System.out.println("For print left empty || for export insert output file path");
-                        String vstup2 = sc.nextLine();
-                        if (vstup2 != ""){
-                            list.exportListToFile(vstup2);
-                        } else {
-                            list.printList();
-                        }
                     }
                 }
             }
+        System.out.println("For print left empty || for export insert output file path");
+        String vstup2 = sc.nextLine();
+        if (vstup2 != ""){
+            list.exportListToFile(vstup2);
+        } else {
+            list.printList();
+        }
     }
     public static boolean isInteger (String str){
         if (str == null) {
