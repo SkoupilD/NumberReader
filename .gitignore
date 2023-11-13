@@ -1,24 +1,14 @@
-# IntelliJ
 .idea/
-
-# macOS
 .DS_Store
 
-# Compiled Java class files
 *.class
-
-# Compiled Java binary files
 *.jar
-
-# Log files
 *.log
-
-# IntelliJ project files
 *.iml
 *.iws
 *.ipr
+*.txt
 
-# User-specific files
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries
