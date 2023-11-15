@@ -56,9 +56,11 @@ class NumberReader {
                     System.out.println("\"For print left empty\" || \"For export insert output file path\"");
                 vstup2 = sc.nextLine();
                 file = new File(vstup2);
-                if (vstup2.isEmpty()) list.printList();
-                break;
-            }
+                if (vstup2.isEmpty()){
+                    list.printList();
+                    break;
+                }
+                }
             }
         } else {
             list.printList();
