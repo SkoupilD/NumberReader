@@ -13,7 +13,7 @@ class NumberReader {
                 System.out.println("\"Insert input file path\" || \"Insert number of integers to input\"");
                 vstup = sc.nextLine();
                 if (isInteger(vstup)) {
-                        intup = Integer.parseInt(vstup);
+                    intup = Integer.parseInt(vstup);
                         if (intup <= 0) {
                             System.out.println("Number should be positive integer!");
                         } else {
@@ -62,20 +62,22 @@ class NumberReader {
                 }
                 }
             }
-        } else {
-            list.printList();
+        } else { list.printList();
         }
     }
     public static boolean isInteger (String str){
-        if (str == null) {
+        try { Integer.parseInt(str);
+        return true;
+        } catch (NumberFormatException e){
             return false;
         }
-        return str.matches("-?\\d+");
     }
     public static boolean isDouble(String str) {
-        if (str == null) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
             return false;
         }
-        return str.matches("-?\\d+(\\.\\d+)?");
     }
 }
