@@ -63,6 +63,7 @@ class NumberReader {
                 }
             }
         } else { list.printList();
+            sc.close();
         }
     }
     public static boolean isInteger (String str){

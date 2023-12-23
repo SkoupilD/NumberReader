@@ -16,6 +16,7 @@ public class NumberList {
                     list.add(record);
                 }
             } if (!list.isEmpty()) System.out.println("File successfully imported!");
+            sc.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         }
@@ -23,7 +24,7 @@ public class NumberList {
     public void exportListToFile(String outputFile) {
         File file = new File(outputFile);
         try (PrintWriter outputWriter =
-                     new PrintWriter(new BufferedWriter(new FileWriter(outputFile)))) {
+                     new PrintWriter(new BufferedWriter(new FileWriter(file)))) {
             int size = list.size();
             if (size % 2 == 0) {
                 for (int number : list) {
@@ -37,7 +38,7 @@ public class NumberList {
                         outputWriter.println(number);
                     }
                 }
-            }
+            } outputWriter.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
 
